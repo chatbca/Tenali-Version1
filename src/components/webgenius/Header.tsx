@@ -5,7 +5,6 @@ import type { FC } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Download,
-  Zap,
   Moon,
   Sun,
   BrainCircuit,
@@ -46,8 +45,8 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
     return (
       <header className="bg-card border-b border-border p-4 flex items-center justify-between shadow-sm sticky top-0 z-50 h-[69px]">
         <div className="flex items-center gap-2">
-          <Zap className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl font-bold text-primary">Tenali</h1>
+          <span role="img" aria-label="logo" className="text-2xl">🧠</span>
+          <h1 className="text-2xl font-bold text-primary">Tenali v-1</h1>
         </div>
         <div className="flex items-center gap-4">
            {/* Placeholder for model selector to maintain layout, adjusted width */}
@@ -68,7 +67,7 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
   return (
     <header className="bg-card border-b border-border p-4 flex items-center justify-between shadow-sm sticky top-0 z-50">
       <div className="flex items-center gap-2">
-        <Zap className="h-8 w-8 text-primary" />
+        <span role="img" aria-label="logo" className="text-2xl">🧠</span>
         <h1 className="text-2xl font-bold text-primary">Tenali</h1>
       </div>
       <div className="flex items-center gap-4">
@@ -84,7 +83,8 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
           <SelectContent>
             {/* Changed the value and display text for the former "GPT-3.5" option */}
             <SelectItem value="gemini_statement_option">we are using gemni only?</SelectItem>
-            <SelectItem value="gpt-4">GPT-4</SelectItem>
+            <SelectItem value="gpt-4">GPT-4(coming soon)</SelectItem>
+            <SelectItem value="DeepSeek">DeepSeek(coming soon)</SelectItem>
           </SelectContent>
         </Select>
 

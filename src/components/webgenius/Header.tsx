@@ -8,7 +8,6 @@ import {
   Zap,
   Moon,
   Sun,
-  ChevronDown,
   BrainCircuit,
 } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -31,7 +30,8 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [selectedModel, setSelectedModel] = useState("gpt-3.5"); // Default model
+  // Update default selected model value to match the new text
+  const [selectedModel, setSelectedModel] = useState("gemini_statement_option"); 
 
   useEffect(() => {
     setMounted(true);
@@ -50,8 +50,8 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
           <h1 className="text-2xl font-bold text-primary">Tenali</h1>
         </div>
         <div className="flex items-center gap-4">
-           {/* Placeholder for model selector to maintain layout */}
-          <div className="w-[150px]"></div>
+           {/* Placeholder for model selector to maintain layout, adjusted width */}
+          <div className="w-[270px]"></div>
           <Button variant="outline" size="icon" className="w-10 h-10" disabled>
             <Sun className="h-[1.2rem] w-[1.2rem]" />
           </Button>
@@ -73,14 +73,17 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
       </div>
       <div className="flex items-center gap-4">
         <Select value={selectedModel} onValueChange={setSelectedModel}>
-          <SelectTrigger className="w-[180px] text-sm">
+          {/* Adjusted width for the new long text */}
+          <SelectTrigger className="w-[270px] text-sm"> 
             <div className="flex items-center gap-2">
               <BrainCircuit className="h-4 w-4 text-muted-foreground" />
+              {/* SelectValue will display the text of the selected SelectItem */}
               <SelectValue placeholder="Select model" />
             </div>
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="gpt-3.5">GPT-3.5</SelectItem>
+            {/* Changed the value and display text for the former "GPT-3.5" option */}
+            <SelectItem value="gemini_statement_option">we are using gemni only?</SelectItem>
             <SelectItem value="gpt-4">GPT-4</SelectItem>
           </SelectContent>
         </Select>
@@ -109,3 +112,5 @@ const Header: FC<HeaderProps> = ({ onExport, isGenerating }) => {
 };
 
 export default Header;
+
+    

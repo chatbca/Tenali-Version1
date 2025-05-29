@@ -1,9 +1,14 @@
+
 "use client";
+
+// This component is no longer used as its functionality has been integrated
+// into the right panel of the main page (src/app/page.tsx).
+// It can be safely deleted if desired.
 
 import type { FC } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { FileCode, FileJson, FileText } from "lucide-react"; // Using FileJson as a placeholder for JS
+import { FileCode, FileJson, FileText } from "lucide-react"; 
 
 export type FileType = "html" | "css" | "js";
 
